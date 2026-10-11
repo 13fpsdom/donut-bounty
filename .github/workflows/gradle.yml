@@ -3,6 +3,9 @@ on: [push, workflow_dispatch]
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: donut-bounty
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -13,4 +16,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: donut-bounty-jar
-          path: build/libs/donut-bounty-1.0.0.jar
+          path: donut-bounty/build/libs/donut-bounty-1.0.0.jar
